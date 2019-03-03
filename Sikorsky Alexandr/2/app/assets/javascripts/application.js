@@ -15,4 +15,14 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .
+
+$(document).on("turbolinks:load", function() {
+  $(".alert")
+    .delay(1000)
+    .fadeOut(500, function() {
+      $(".alert").alert("close");
+    });
+});

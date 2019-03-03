@@ -10,6 +10,9 @@ html
   body
     = render 'layouts/nav'
     .container
+      - if notice 
+        .alert.alert-success { role="alert" }
+          A = notice
       = yield
     footer.footer
       .container
