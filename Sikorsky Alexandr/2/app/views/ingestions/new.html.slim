@@ -1,12 +1,3 @@
-= form_for @ingestion do |f|
-  - if @ingestion.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@ingestion.errors.count, "error")} prohibited this dish from being saved:"
-      ul
-        - @ingestion.errors.full_messages.each do |message|
-          li = message
+= render 'form'
 
-  .field
-    = f.label :dishes
-    = f.collection_select(:dish_ids, Dish.all, :id, :name, {}, {:multiple => true, :class => 'form-control'})
-  .actions = f.submit
+= link_to 'Back', ingestions_path
