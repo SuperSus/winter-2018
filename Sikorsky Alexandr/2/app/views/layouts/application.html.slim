@@ -8,10 +8,9 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-      = render 'layouts/nav'
-  .container
-    .row
+    = render 'layouts/nav'
+    .container
       = yield
-
-    footer
-      p &copy; Company <%= Date.today.year %>
+    footer.footer
+      .container
+        span &copy; #{ Date.today.year } Sikorsky inc.
