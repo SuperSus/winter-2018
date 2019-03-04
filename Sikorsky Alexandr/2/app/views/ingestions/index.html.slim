@@ -12,7 +12,7 @@ h1 Ingestions
     tbody
       - @ingestions.each do |ingestion|
         tr
-          td = ingestion.time.to_s
+          td = ingestion.time.strftime('%F %H:%M') 
           td = dishes2str(ingestion)
           td = total_calories(ingestion)
           td = link_to 'Edit', edit_ingestion_path(ingestion)

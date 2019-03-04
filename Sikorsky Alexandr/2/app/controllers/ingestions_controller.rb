@@ -2,7 +2,7 @@ class IngestionsController < ApplicationController
   before_action :set_ingestion, only: %i[edit update destroy]
 
   def index
-    @ingestions = Ingestion.all
+    @ingestions = current_user.ingestions
   end
 
   def new
