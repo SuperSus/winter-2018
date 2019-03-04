@@ -1,22 +1,22 @@
 h1 Ingestions
-
-table
-  thead
-    tr
-      th Time
-      th Dishes
-      th Calorie value
-      th 
-      th 
-
-  tbody
-    - @ingestions.each do |ingestion|
+.container-fluid
+  table.table-striped.table-wrapper-scroll {width="100%"}
+    thead
       tr
-        td = ingestion.time.to_s
-        td = dishes2str(ingestion)
-        td = total_calories(ingestion)
-        td = link_to 'Edit', edit_ingestion_path(ingestion)
-        td = link_to 'Destroy', ingestion, data: { confirm: 'Are you sure?' }, method: :delete
+        th Time
+        th Dishes
+        th Calorie value
+        th 
+        th 
+
+    tbody
+      - @ingestions.each do |ingestion|
+        tr
+          td = ingestion.time.to_s
+          td = dishes2str(ingestion)
+          td = total_calories(ingestion)
+          td = link_to 'Edit', edit_ingestion_path(ingestion)
+          td = link_to 'Destroy', ingestion, data: { confirm: 'Are you sure?' }, method: :delete
 br
 
-= link_to 'add ingestion', new_ingestion_path
+= link_to '<button class="btn btn-primary">new</button>'.html_safe , new_ingestion_path
