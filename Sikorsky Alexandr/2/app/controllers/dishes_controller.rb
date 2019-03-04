@@ -1,5 +1,5 @@
 class DishesController < ApplicationController
-  before_action :set_dish, only: [:show, :edit, :update, :destroy]
+  before_action :set_dish, only: %i[show edit update destroy]
 
   # GET /dishes
   # GET /dishes.json
@@ -9,8 +9,7 @@ class DishesController < ApplicationController
 
   # GET /dishes/1
   # GET /dishes/1.json
-  def show
-  end
+  def show; end
 
   # GET /dishes/new
   def new
@@ -18,8 +17,7 @@ class DishesController < ApplicationController
   end
 
   # GET /dishes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /dishes
   # POST /dishes.json
@@ -62,13 +60,14 @@ class DishesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_dish
-      @dish = Dish.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def dish_params
-      params.require(:dish).permit(:name, :weight, :calorie_value, :proteins, :carbohydrates, :fats)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_dish
+    @dish = Dish.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def dish_params
+    params.require(:dish).permit(:name, :weight, :calorie_value, :proteins, :carbohydrates, :fats)
+  end
 end

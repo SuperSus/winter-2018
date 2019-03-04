@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :ingestions, only: %i[index new create update edit destroy]
   resources :dishes
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   namespace :charts do
     get 'average-calories'
